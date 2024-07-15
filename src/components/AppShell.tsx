@@ -52,34 +52,14 @@ const AppShell = () => {
           style={{ width: "20rem", padding: "5rem" }}
           onClick={handleClick}
         />
-        <Model
+        {/* <Model
           type="posterior"
           data={data}
           style={{ width: "20rem", padding: "5rem" }}
           highlightedColors={["#e65a5a", "#db2f2f"]}
           onClick={handleClick}
-        />
+        /> */}
       </div>
-      {/* <div>
-        <IonDatetime></IonDatetime>
-      </div>
-      <div>
-        <IonPicker>
-          <IonPickerColumn value="javascript">
-            <IonPickerColumnOption value="" disabled={true}>
-              --
-            </IonPickerColumnOption>
-            <IonPickerColumnOption value="javascript">
-              Javascript
-            </IonPickerColumnOption>
-            <IonPickerColumnOption value="typescript">
-              Typescript
-            </IonPickerColumnOption>
-            <IonPickerColumnOption value="rust">Rust</IonPickerColumnOption>
-            <IonPickerColumnOption value="c#">C#</IonPickerColumnOption>
-          </IonPickerColumn>
-        </IonPicker>
-      </div> */}
     </IonApp>
   );
 };

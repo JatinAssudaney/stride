@@ -14,11 +14,16 @@ import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+const Tabs = dynamic(() => import("@/components/tabs"), { ssr: false });
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -32,17 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Script
-        type="module"
-        src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"
-        strategy="lazyOnload"
-      />
-      <Script
-        noModule
-        src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
-        strategy="lazyOnload"
-      />
+      <body className={`${poppins.className} bg-black-primary`}>
+        <main>{children}</main>
+        <footer>
+          <Tabs />
+        </footer>
+      </body>
     </html>
   );
 }

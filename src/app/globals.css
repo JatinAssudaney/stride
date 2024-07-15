@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --ion-tab-bar-color: white;
+  --ion-tab-bar-color-selected: #29e33c;
+}
