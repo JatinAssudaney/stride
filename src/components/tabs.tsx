@@ -15,24 +15,23 @@ import {
   fileTrayStackedOutline,
   bookmarksOutline,
 } from "ionicons/icons";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { Route } from "react-router";
+import { Redirect, Route, Switch } from "react-router-dom";
+import Profile from "./pages/profile";
+import Home from "./pages/home";
+import Resources from "./pages/resources";
+import Saved from "./pages/saved";
 setupIonicReact({});
 
 function Tabs() {
-  const router = useRouter();
-  useEffect(() => {
-    router.push("/home");
-  }, [router]);
-
   return (
     <IonReactRouter>
-      <IonTabs className="bg-black-primary">
+      <IonTabs>
         <IonRouterOutlet>
-          <Route path="/home" render={() => <></>} exact={true} />
-          <Route path="/resources" render={() => <></>} exact={true} />
-          <Route path="/profile" render={() => <></>} exact={true} />
+          <Route path="" exact render={() => <Redirect to="/home" />} />
+          <Route path="/home" exact render={() => <Home />} />
+          <Route path="/resources" exact render={() => <Resources />} />
+          <Route path="/saved" exact render={() => <Saved />} />
+          <Route path="/profile" exact render={() => <Profile />} />
         </IonRouterOutlet>
         <IonTabBar
           slot="bottom"
@@ -52,11 +51,7 @@ function Tabs() {
             <IonLabel>Resources</IonLabel>
           </IonTabButton>
 
-          <IonTabButton
-            tab="library"
-            href="/library"
-            className="bg-black-primary"
-          >
+          <IonTabButton tab="saved" href="/saved" className="bg-black-primary">
             <IonIcon icon={bookmarksOutline} />
             <IonLabel>Saved</IonLabel>
           </IonTabButton>
