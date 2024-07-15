@@ -35,7 +35,7 @@ function Tabs() {
         </IonRouterOutlet>
         <IonTabBar
           slot="bottom"
-          className="bg-black-primary bg-transparent border border-black-secondary p-2 cursor-pointer"
+          className="bg-black-primary bg-transparent border-t border-black-secondary p-2 cursor-pointer rounded-b-lg"
         >
           <IonTabButton tab="home" href="/home" className="bg-black-primary">
             <IonIcon icon={homeOutline} mode="ios" title="home" />
