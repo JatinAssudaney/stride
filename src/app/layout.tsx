@@ -1,3 +1,5 @@
+import type { Metadata, Viewport } from "next";
+
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -13,12 +15,10 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
-import Script from "next/script";
-import dynamic from "next/dynamic";
-const Tabs = dynamic(() => import("@/components/tabs"), { ssr: false });
+
+import "../styles/globals.css";
+import "../styles/variables.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +28,15 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Stride: Your Fitness App",
   description: "Track your workout with ease",
+  icons: {
+    icon: "./icon/favicon.ico",
+  },
+};
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: "device-width",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -36,7 +45,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        <link rel="icon" href="/icon/favicon.ico" />
+      </head>
       <body className={`${poppins.className} bg-black-primary`}>
         {children}
       </body>

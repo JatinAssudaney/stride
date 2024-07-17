@@ -10,7 +10,7 @@ export async function generateStaticParams() {
   return [
     { all: ["home"] },
     { all: ["resources"] },
-    { all: ["library"] },
+    { all: ["saved"] },
     { all: ["profile"] },
   ];
 }

@@ -3,7 +3,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route } from "react-router-dom";
 
-import Tabs from "./tabs";
+import Tabs from "./pages/tabs";
 
 setupIonicReact({});
 
@@ -12,9 +12,7 @@ const AppShell = () => {
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet id="main">
-          <Route path="/">
-            <Tabs />
-          </Route>
+          <Route path="/" render={() => <Tabs />} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
