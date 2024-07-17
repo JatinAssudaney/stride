@@ -4,5 +4,6 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   --ion-tab-bar-color: white;
-  --ion-tab-bar-color-selected: #29e33c;
+  --ion-tab-bar-color-selected: #1ed760;
+  --ion-tab-bar-background: #191414;
 }

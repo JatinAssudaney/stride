@@ -1,3 +1,3 @@
 export default function Saved() {
-  return <div>Saved</div>;
+  return <div className="text-white">Saved</div>;
 }

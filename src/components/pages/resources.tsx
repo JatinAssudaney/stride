@@ -1,3 +1,3 @@
 export default function Resources() {
-  return <div>Resources</div>;
+  return <div className="text-white">Resources</div>;
 }
